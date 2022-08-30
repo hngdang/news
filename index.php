@@ -45,11 +45,6 @@
                 $sql = "SELECT id,image,title,summary,created_at FROM news WHERE is_active=1
                 /* EXCEPT(SELECT id,image,title,summary,created_at FROM news
                 WHERE is_active=1 ORDER BY created_at DESC LIMIT 2) */
-                AND id NOT IN (
-                    SELECT id,image,title,summary,created_at
-                    FROM news
-                    WHERE is_active=1 ORDER BY created_at DESC LIMIT 2
-                )
                 ORDER BY created_at DESC LIMIT 12";
                 $result = $conn->query($sql);
                 if($result->num_rows > 0){
