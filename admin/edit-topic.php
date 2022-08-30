@@ -149,9 +149,9 @@
                                     ?>
                                     <?php
                                         $sql = "SELECT id, name FROM categories WHERE is_active = 1
-                                        EXCEPT SELECT topics.categoryID as categoryID, categories.name as category
+                                        /* EXCEPT SELECT topics.categoryID as categoryID, categories.name as category
                                         FROM topics JOIN categories ON topics.categoryID=categories.id
-                                        WHERE topics.id = $topic";
+                                        WHERE topics.id = $topic */";
                                         $result = $conn->query($sql);
                                         if($result->num_rows > 0){
                                             while($row = $result->fetch_assoc()){
