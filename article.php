@@ -112,8 +112,8 @@
                 <h4 class="mb-3 ms-3">Cùng chủ đề</h4>
                 <?php
                     $sql = "SELECT id,image,title,view FROM news WHERE is_active=1 AND topicID='$topic'
-                    EXCEPT(SELECT id,image,title,view FROM news WHERE id='$news')
-                    ORDER BY view DESC LIMIT 3";
+                    /* EXCEPT(SELECT id,image,title,view FROM news WHERE id='$news')
+                    ORDER BY view DESC LIMIT 3 */";
                     $result = $conn->query($sql);
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
