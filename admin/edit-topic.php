@@ -17,7 +17,7 @@
         categoryID = '$categoryID' WHERE id = $topic";
         
 
-        $sql = "SELECT name FROM topics WHERE name='$name' AND categoryID=$categoryID";
+        $sql = "SELECT name FROM topics WHERE name='$name' AND categoryID=$categoryID AND ";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             set_flash_session('error','Chủ đề này đã tồn tại.');

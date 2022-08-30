@@ -15,7 +15,7 @@
         $content = $_POST['content'];
         $summary = $_POST['summary'];
 
-        $sql = "SELECT title FROM news WHERE title='$title'";
+        $sql = "SELECT title FROM news WHERE title='$title' AND id!=$news";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             set_flash_session('error','Tiêu đề này đã tồn tại.');
