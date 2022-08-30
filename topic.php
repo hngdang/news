@@ -93,7 +93,7 @@
                     <li class="nav-item">
                     <?php
                         $sql = "SELECT id,name FROM topics WHERE is_active=1 AND categoryID='$category'
-                        /* EXCEPT SELECT id,name FROM topics WHERE id='$topic' */";
+                        EXCEPT SELECT id,name FROM topics WHERE id='$topic'";
                         $result = $conn->query($sql);
                         if($result->num_rows > 0){
                             while($row = $result->fetch_assoc()){

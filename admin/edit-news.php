@@ -173,9 +173,9 @@
                                                     <?php
                                                         $sql = "SELECT topics.id AS id,topics.name AS name FROM topics JOIN categories ON topics.categoryID=categories.id
                                                         WHERE topics.is_active=1 AND categories.is_active=1 AND categories.id='$categoryID'
-                                                        /* EXCEPT (SELECT topics.id AS id, topics.name AS name
+                                                        EXCEPT (SELECT topics.id AS id, topics.name AS name
                                                         FROM topics JOIN news ON topics.id=news.topicID JOIN categories ON categories.id=topics.categoryID
-                                                        WHERE news.id = '$news' AND topics.is_active=1 AND categories.id='$categoryID') */";
+                                                        WHERE news.id = '$news' AND topics.is_active=1 AND categories.id='$categoryID')";
                                                         $result = $conn->query($sql);
                                                         if($result->num_rows > 0){
                                                             while($rows = $result->fetch_assoc()){
@@ -192,24 +192,24 @@
                                                 ?>
                                                 <?php
                                                     $sql = "SELECT id, name FROM categories WHERE is_active = 1
-                                                    /* EXCEPT (SELECT categories.id AS id, categories.name AS name
+                                                    EXCEPT (SELECT categories.id AS id, categories.name AS name
                                                     FROM topics JOIN news ON topics.id=news.topicID JOIN categories ON categories.id=topics.categoryID
-                                                    WHERE news.id = '$news') */";
+                                                    WHERE news.id = '$news')";
                                                     $result = $conn->query($sql);
                                                     if($result->num_rows > 0){
                                                         while($rows = $result->fetch_assoc()){
                                                             $categoryID = $rows['id'];
                                                 ?>
                                                 <optgroup label="<?= $rows['name'] ?>">
-                                                <?php
-                                                        $sql = "SELECT topics.id AS id, topics.name AS name
+                                                    <?php
+                                                        $query = "SELECT topics.id AS id, topics.name AS name
                                                         FROM topics JOIN categories ON categories.id=topics.categoryID
                                                         WHERE topics.is_active = 1 AND categories.is_active = 1 AND categories.id='$categoryID'";
-                                                        $result = $conn->query($sql);
-                                                        if($result->num_rows > 0){
-                                                            while($rows = $result->fetch_assoc()){
+                                                        $result_query = $conn->query($query);
+                                                        if($result_query->num_rows > 0){
+                                                            while($rows_query = $result_query->fetch_assoc()){
                                                     ?>
-                                                    <option value="<?= $rows['id'] ?>"><?= $rows['name'] ?></option>
+                                                    <option value="<?= $rows_query['id'] ?>"><?= $rows_query['name'] ?></option>
                                                     <?php
                                                             }
                                                         }
