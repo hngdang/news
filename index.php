@@ -21,11 +21,29 @@
     <?php include('components/navbar.php'); ?>
     <div class="container mb-5">
         <div class="row">
-            
+            <?php
+                $sql = "SELECT id,image,title,summary,created_at FROM news
+                WHERE is_active=1 ORDER BY created_at DESC LIMIT 2";
+                $result = $conn->query($sql);
+                if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+            ?>
+                <div class="col-lg-6 col-md-12 d-flex align-items-stretch article">
+                    <a href="article.php?id=<?= $row['id'] ?>" class="card">
+                        <img class="card-img-top" src="public/uploads/<?= $row['image'] ?>" alt="">
+                        <div class="card-body">
+                            <h5 class="article-title"><?= $row['title'] ?></h5>
+                            <p class="article-summary"><?= $row['summary'] ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php            
+                    }
+                }
+            ?>
             <?php
                 $sql = "SELECT id,image,title,summary,created_at FROM news WHERE is_active=1
-                EXCEPT(SELECT id,image,title,summary,created_at FROM news
-                WHERE is_active=1 ORDER BY created_at DESC LIMIT 2)
+                
                 ORDER BY created_at DESC LIMIT 12";
                 $result = $conn->query($sql);
                 if($result->num_rows > 0){
