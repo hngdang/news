@@ -35,7 +35,7 @@
             $mail->send();
             if($purpose == 1){
                 set_flash_session('mess_flash','Chúng tôi đã gửi đến địa chỉ email: ' . $email . ' một đường dẫn để kích hoạt tài khoản của bạn. Xin vui lòng hãy kiểm tra email để được hướng dẫn');
-                redirect('login.php');
+                redirect('news-login.php');
             }
             else if($purpose == 2){
                 set_flash_session('mess_flash','Chúng tôi đã gửi đến địa chỉ email: ' . $email . ' một đường dẫn để khôi phục mật khẩu của bạn. Xin vui lòng hãy kiểm tra email để được hướng dẫn.');

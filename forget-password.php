@@ -16,7 +16,7 @@
             $sql = "UPDATE users SET OTP='$token' WHERE email='$email'";
             if($conn->query($sql) === TRUE){
                 $subject = 'Khôi phục mật khẩu';
-                $link = "<a href='localhost/news/reset-password.php?token=".$token."'>đường dẫn này</a>";
+                $link = "<a href='https://news-php.herokuapp.com/reset-password.php?token=".$token."'>đường dẫn này</a>";
                 $body = 'Hãy nhấn vào '.$link.' để khôi phục mật khẩu cho tài khoản của bạn.';
                 $purpose = 2;
                 SendMail($email,$subject,$body,$purpose);

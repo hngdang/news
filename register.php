@@ -23,7 +23,7 @@
                     $sql = "INSERT INTO users(email,password,name,OTP) VALUES ('$email',md5('$password'),'$name','$token')";
                     if($conn->query($sql) === TRUE){
                         $subject = 'Xác nhận địa chỉ Email';
-                        $link = "<a href='localhost/news/verify-email.php?token=".$token."'>đường dẫn này</a>";
+                        $link = "<a href='https://news-php.herokuapp.com/news/verify-email.php?token=".$token."'>đường dẫn này</a>";
                         $body = 'Hãy nhấn vào '.$link.' để xác nhận địa chỉ email cho tài khoản của bạn.';
                         $purpose = 1;
                         SendMail($email,$subject,$body,$purpose);
