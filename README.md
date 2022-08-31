@@ -30,7 +30,9 @@ Khi đăng nhập vào trang quản trị viên thành công, quản trị viên
 - Quản lý độc giả: xem danh sách và quản lý khóa tài khoản độc giả
 - Quản lý thông tin cá nhân: cập nhật thông tin cá nhân
 - Đổi mật khẩu
-  <br>Khi đăng nhập vào tin tức, khách hàng sẽ có những chức năng chính bao gồm:<br>
+
+Khi đăng nhập vào tin tức, khách hàng sẽ có những chức năng chính bao gồm:
+
 - Tìm kiểm: tìm kiếm theo tiêu đề bài báo
 - Xem tin tức theo danh mục
 - Xem tin tức theo chủ đề
