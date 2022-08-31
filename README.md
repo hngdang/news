@@ -5,15 +5,20 @@
 Link web: https://news-php.herokuapp.com
 <br>
 Email: tranhoangdang1402@gmail.com
+<br>
 Mật khẩu: 12345678
-
+<br>
+<br>
 Link web CMS: https://news-php.herokuapp.com/admin
+<br>
 Email: tranhoangdang1402@gmail.com
+<br>
 Mật khẩu: 12345678
+<br>
 
 ## Mô tả hệ thống
 
-Hệ thống đọc tin tức bao gồm 2 người dùng chính là quản trị viên và khách hàng.
+Hệ thống đọc tin tức bao gồm 2 người dùng chính là quản trị viên và khách hàng.<br>
 Khi đăng nhập vào trang quản trị viên thành công, quản trị viên sẽ có những chức năng chính bao gồm:
 
 - Đăng nhập: Quản trị viên bắt buộc phải đăng nhập trước khi vào được hệ thống, nếu đã đăng nhập chuyển đến trang chủ
@@ -25,7 +30,7 @@ Khi đăng nhập vào trang quản trị viên thành công, quản trị viên
 - Quản lý độc giả: xem danh sách và quản lý khóa tài khoản độc giả
 - Quản lý thông tin cá nhân: cập nhật thông tin cá nhân
 - Đổi mật khẩu
-  Khi đăng nhập vào tin tức, khách hàng sẽ có những chức năng chính bao gồm:
+  <br>Khi đăng nhập vào tin tức, khách hàng sẽ có những chức năng chính bao gồm:<br>
 - Tìm kiểm: tìm kiếm theo tiêu đề bài báo
 - Xem tin tức theo danh mục
 - Xem tin tức theo chủ đề
@@ -39,7 +44,7 @@ Khi đăng nhập vào trang quản trị viên thành công, quản trị viên
 
 ## Hướng dẫn chạy source code
 
-Tải source code vào htdocs trong XAMPP
-Nhập file database/news.sql vào phpMyadmin
-Cấu hình lại thông tin của db trong dile database/conn.php
+Tải source code vào htdocs trong XAMPP<br>
+Nhập file database/news.sql vào phpMyadmin<br>
+Cấu hình lại thông tin của db trong dile database/conn.php<br>
 Mở trình duyệt và chạy localhost/news
