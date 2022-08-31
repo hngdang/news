@@ -57,7 +57,7 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                 ?>
-                    <div class="col-md-4 col-6 d-flex align-items-stretch article">
+                    <div class="col-md-4 col-12 d-flex align-items-stretch article">
                         <a href="article.php?id=<?= $row['id'] ?>" class="card">
                             <img class="card-img-top height" src="public/uploads/<?= $row['image'] ?>" alt="">
                             <div class="card-body">
