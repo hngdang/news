@@ -1,7 +1,6 @@
 <?php
     include('database/conn.php');
     require_once('functions.php');
-    require_once('mail.php');
 
     if(isset($_COOKIE['news'])){
         redirect('index.php');
@@ -26,7 +25,7 @@
                         $subject = 'Xác nhận địa chỉ Email';
                         $link = "<a href='localhost/news/verify-email.php?token=".$token."'>đường dẫn này</a>";
                         $body = 'Hãy nhấn vào '.$link.' để xác nhận địa chỉ email cho tài khoản của bạn.';
-                        $purpose = 1; //Verify email
+                        $purpose = 1;
                         SendMail($email,$subject,$body,$purpose);
                     }
                     else{
