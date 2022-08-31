@@ -28,7 +28,6 @@
                 $user = $_COOKIE['news'];
             ?>
                 <div class="d-flex">
-                    <p><?= $name ?></p>
                     <div class="dropdown">
                         <div class="dropdown" data-bs-toggle="dropdown">
                             <img src="public/uploads/<?= $img ?>" id="avatar-dropdown" alt="">
@@ -40,6 +39,7 @@
                             <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                         </ul>
                     </div>
+                    <p class="ms-2"><?= $name ?></p>
                 </div>
             <?php
             }
