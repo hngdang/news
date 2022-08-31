@@ -48,5 +48,5 @@ Khi đăng nhập vào tin tức, khách hàng sẽ có những chức năng ch�
 
 Tải source code vào htdocs trong XAMPP<br>
 Nhập file database/news.sql vào phpMyadmin<br>
-Cấu hình lại thông tin của db trong dile database/conn.php<br>
+Cấu hình lại thông tin của db trong file database/conn.php<br>
 Mở trình duyệt và chạy localhost/news
