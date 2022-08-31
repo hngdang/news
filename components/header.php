@@ -39,7 +39,6 @@
                             <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                         </ul>
                     </div>
-                    <p class="ms-2"><?= $name ?></p>
                 </div>
             <?php
             }
