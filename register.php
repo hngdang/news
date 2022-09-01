@@ -99,7 +99,7 @@
 <body class="d-flex flex-column min-vh-100">
     <?php include('components/header.php'); ?>
     <div class="border-bottom"></div>
-    <div class="container mt-5 mb-5">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-md-6 m-auto">
                 <h2 class="d-flex justify-content-center heading">Đăng ký</h2>

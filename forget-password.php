@@ -51,7 +51,7 @@
                     ));
 
                     $mail->send();
-                    set_flash_session('mess_flash','Chúng tôi đã gửi đến địa chỉ email: ' . $email . ' một đường dẫn để khôi phục mật khẩu của bạn. Xin vui lòng hãy kiểm tra email để được hướng dẫn.');
+                    set_flash_session('mess_flash','Chúng tôi đã gửi đến địa chỉ email: ' . $email . ' một đường dẫn để khôi phục mật khẩu của bạn. Xin vui lòng hãy kiểm tra email để được hướng dẫn');
                     redirect('login.php');
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
