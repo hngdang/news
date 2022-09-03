@@ -11,7 +11,7 @@
         $password = $_POST['password'];
         $re_password = $_POST['re-password'];
         $name = $_POST['name'];
-        $token = md5('$email').rand(10,9999);
+        $token = rand(10,9999);
         $sql = "SELECT email FROM users WHERE email='$email'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
@@ -23,7 +23,7 @@
                     $sql = "INSERT INTO users(email,password,name,OTP) VALUES ('$email',md5('$password'),'$name','$token')";
                     if($conn->query($sql) === TRUE){
                         $subject = 'Xác nhận địa chỉ Email';
-                        $link = "<a href='https://news-php.herokuapp.com/news/verify-email.php?token=".$token."'>đường dẫn này</a>";
+                        $link = "<a href='https://news-php.herokuapp.com/verify-email.php?token=".$token."'>đường dẫn này</a>";
                         $body = 'Hãy nhấn vào '.$link.' để xác nhận địa chỉ email cho tài khoản của bạn.';
                         require "PHPMailer/src/PHPMailer.php";
                         require "PHPMailer/src/SMTP.php";

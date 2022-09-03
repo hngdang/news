@@ -9,7 +9,7 @@
 
     if(isset($_POST['submit'])){
         $email = $_POST['email'];
-        $token = md5('$email').rand(10,9999);
+        $token = rand(10,9999);
         $sql = "SELECT email FROM users WHERE email='$email'";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
