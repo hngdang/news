@@ -37,12 +37,12 @@
                             $mail->CharSet    = "utf-8";
                             $mail->Host       = 'smtp.gmail.com';
                             $mail->SMTPAuth   = true;
-                            $mail->Username   = 'tranhoangdang.test@gmail.com';
-                            $mail->Password   = 'azlxpxpqvswfkdgy';
+                            $mail->Username   = 'hoangdangtran.test@gmail.com';
+                            $mail->Password   = 'iupvuftszovftzwy';
                             $mail->SMTPSecure = 'ssl';
                             $mail->Port       = 465;
 
-                            $mail->setFrom('tranhoangdang.test@gmail.com', 'Tin tức PHP');
+                            $mail->setFrom('hoangdangtran.test@gmail.com', 'Tin tức PHP');
                             $mail->addAddress($email);
 
                             $mail->isHTML(true);
