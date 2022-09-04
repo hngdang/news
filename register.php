@@ -1,7 +1,6 @@
 <?php
     include('database/conn.php');
     require_once('functions.php');
-    include('mail.php');
 
     if(isset($_COOKIE['news'])){
         redirect('index.php');
@@ -26,7 +25,44 @@
                         $subject = 'Xác nhận địa chỉ Email';
                         $link = "<a href='https://news-php.herokuapp.com/verify-email.php?token=".$token."'>đường dẫn này</a>";
                         $body = 'Hãy nhấn vào '.$link.' để xác nhận địa chỉ email cho tài khoản của bạn.';
-                        sendMail($email,$subject,$body,$purpose);
+                        require "PHPMailer/src/PHPMailer.php";
+                        require "PHPMailer/src/SMTP.php";
+                        require "PHPMailer/src/Exception.php";
+
+                        $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+
+                        try {
+                            $mail->SMTPDebug = 0;
+                            $mail->isSMTP();
+                            $mail->CharSet    = "utf-8";
+                            $mail->Host       = 'smtp.gmail.com';
+                            $mail->SMTPAuth   = true;
+                            $mail->Username   = 'hoangdangtran.test@gmail.com';
+                            $mail->Password   = 'iupvuftszovftzwy';
+                            $mail->SMTPSecure = 'ssl';
+                            $mail->Port       = 465;
+
+                            $mail->setFrom('hoangdangtran.test@gmail.com', 'Tin tức PHP');
+                            $mail->addAddress($email);
+
+                            $mail->isHTML(true);
+                            $mail->Subject = $subject;
+                            $mail->Body    = $body;
+
+                            $mail->smtpConnect( array(
+                                "ssl" => array(
+                                    "verify_peer" => false,
+                                    "verify_peer_nam" => false,
+                                    "allow_self_signed" => true
+                                )
+                            ));
+
+                            $mail->send();
+                            set_flash_session('mess_flash','Chúng tôi đã gửi đến địa chỉ email: ' . $email . ' một đường dẫn để kích hoạt tài khoản của bạn. Xin vui lòng hãy kiểm tra email để được hướng dẫn');
+                            redirect('login.php');
+                        } catch (Exception $e) {
+                            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                        }
                     }
                     else{
                         set_flash_session('error','Không thể tạo tài khoản.');
