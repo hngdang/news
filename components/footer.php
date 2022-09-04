@@ -9,9 +9,9 @@
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-twitter"></i></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram"></i></a></li>
-            <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook"></i></a></li>
+                <li class="ms-3"><a class="text-white" href="https://github.com/hngdang" target="_blank"><i class="bi bi-github"></i></a></li>
+                <li class="ms-3"><a class="text-white" href="https://www.linkedin.com/in/hngdang/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                <li class="ms-3"><a class="text-white" href="https://www.facebook.com/hngdang.trn/" target="_blank"><i class="bi bi-facebook"></i></a></li>
             </ul>
         </footer>
     </div>
