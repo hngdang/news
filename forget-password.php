@@ -19,6 +19,7 @@
                 $link = "<a href='https://news-php.herokuapp.com/reset-password.php?token=".$token."'>đường dẫn này</a>";
                 $body = 'Hãy nhấn vào '.$link.' để khôi phục mật khẩu cho tài khoản của bạn.';
                 $purpose = 2;
+                sendMail($email,$subject,$body,$purpose);
                 
             }
             else{
