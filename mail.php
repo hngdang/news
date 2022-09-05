@@ -9,15 +9,15 @@
         try {
             $mail->SMTPDebug = 0;
             $mail->isSMTP();
-            $mail->CharSet    = "utf-8";
+            $mail->CharSet    = 'utf-8';
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'hoangdangtran.test@gmail.com';
-            $mail->Password   = 'iupvuftszovftzwy';
+            $mail->Username   = '';
+            $mail->Password   = '';
             $mail->SMTPSecure = 'ssl';
             $mail->Port       = 465;
 
-            $mail->setFrom('hoangdangtran.test@gmail.com', 'Tin tức PHP');
+            $mail->setFrom('', '');
             $mail->addAddress($email);
 
             $mail->isHTML(true);
